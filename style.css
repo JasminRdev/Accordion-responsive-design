@@ -1,0 +1,202 @@
+:root {
+
+    --text-Very-dark-blue: hsl(238, 29%, 16%);
+    --text-Soft-red: hsl(14, 88%, 65%);
+    --text-Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --textDark-grayish-blue: hsl(240, 6%, 50%);
+
+    --devider-gray-blue: hsl(240, 5%, 91%);
+
+    --gr-Soft-violet: hsl(273, 75%, 66%);
+    --gr-Soft-blue: hsl(240, 73%, 65%);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    background-image: linear-gradient(var(--gr-Soft-violet), var(--gr-Soft-blue));
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: var(--text-Very-dark-grayish-blue);
+
+}
+
+
+.container {
+    display: grid;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    position: relative;
+}
+
+p{
+    font-size: .7rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem; 
+}
+
+@media (min-width:23em) {
+
+
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+
+        margin: 9.375rem 1.75rem;
+    }
+
+    .right-side {
+        margin: 9rem 1.6rem 3.1rem 1.6rem;
+    }
+
+    .accordion {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        background-color: inherit;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;  
+        outline: none;
+        transition: 0.4s;
+    }
+
+    .accordion h2 {
+        font-size: .8rem;
+        font-family: 'Kumbh Sans', sans-serif;
+        font-weight: normal;
+
+    }
+
+    .accordion::after {
+        content: "";
+        display: flex;
+        background: center center/cover url("./images/icon-arrow-down.svg") no-repeat;
+        width: .625rem;
+        height: .625rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .faq-part {
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--devider-gray-blue);
+
+    }
+
+    .panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+
+    .illustration-1 {
+        position: absolute;
+        background: center/contain url("./images/illustration-woman-online-mobile.svg") no-repeat;
+        width: 15rem;
+        height: 15rem;
+        top: -9rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .illustration-2{
+        position: absolute;
+        background: center/contain url("./images/bg-pattern-mobile.svg") no-repeat;
+        width: 15rem;
+        height: 15rem;
+        top: -12%;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    
+    .active h2 {
+        font-weight: bold;
+
+      }      
+      .arrow-change {
+        transform: rotateX(180deg);
+    }
+
+
+
+}
+
+
+/* 
+desktop */
+
+@media (min-width:90em) {
+  
+
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 8rem 16.25rem;
+    }
+
+    .right-side {
+        margin: 4.375rem 6rem 5.3rem 2.8rem;
+
+    }
+
+    h1 {
+        text-align: left;
+    }
+
+    .left-side {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .illustration-1 {
+        position: absolute;
+        background: center/contain url("./images/illustration-woman-online-desktop.svg") no-repeat;
+        width: 30rem;
+        height: 33rem;
+        left: -10rem;
+        top: 0;
+    }
+
+    .illustration-2 {
+        position: absolute;
+        background: center/contain url("./images/bg-pattern-desktop.svg") no-repeat;
+        width: 58rem;
+        height: 58rem;
+        left: -36rem;
+        top: -16rem;
+    }
+
+    .container::after{
+        content:"";
+        background: center/cover url("./images/illustration-box-desktop.svg") no-repeat;
+        width: 8rem;
+        height: 8.5rem;
+        position:absolute;
+        top: 15rem;
+        z-index: 1;
+        left: -4rem;
+    }
+
+
+
+}
